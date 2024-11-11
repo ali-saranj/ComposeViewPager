@@ -1,5 +1,8 @@
 # ComposeLearn - Introduction Screen with Horizontal Pager
 
+![Horizontal Pager](https://miro.medium.com/v2/resize:fit:750/format:webp/1*ZozfUVF9VACNO3iqoWdrtw.png)
+
+
 This project demonstrates a simple **introduction screen** created using **Jetpack Compose**. It includes a horizontal pager to navigate through different intro pages and a bottom sheet with navigation controls.
 
 ## Features
