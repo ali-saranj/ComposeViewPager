@@ -115,36 +115,38 @@ fun BottomSheet(modifier: Modifier = Modifier, pagerState: PagerState, pages: Li
                 } else {
                     Spacer(modifier = Modifier.width(100.dp))
                 }
-                Card(
-                    modifier = Modifier.clickable {
-                        jab.launch {
-                            pagerState.animateScrollToPage(pagerState.currentPage + 1)
-                        }
-                    },
-                    colors = CardDefaults.cardColors(containerColor = pages[pagerState.currentPage].color),
-                    shape = CircleShape
-                ) {
-                    Column(
-                        modifier = Modifier.padding(4.dp),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Card(
-                            shape = CircleShape
-                        ) {
-                            Column(
-                                modifier = Modifier.padding(10.dp),
-                                verticalArrangement = Arrangement.Center,
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                Icon(
-                                    modifier = Modifier.size(30.dp),
-                                    imageVector = Icons.Rounded.ArrowForward,
-                                    contentDescription = null,
-                                    tint = pages[pagerState.currentPage].color
-                                )
+                if (pagerState.currentPage != pages.size - 1) {
+                    Card(
+                        modifier = Modifier.clickable {
+                            jab.launch {
+                                pagerState.animateScrollToPage(pagerState.currentPage + 1)
                             }
+                        },
+                        colors = CardDefaults.cardColors(containerColor = pages[pagerState.currentPage].color),
+                        shape = CircleShape
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(4.dp),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Card(
+                                shape = CircleShape
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(10.dp),
+                                    verticalArrangement = Arrangement.Center,
+                                    horizontalAlignment = Alignment.CenterHorizontally
+                                ) {
+                                    Icon(
+                                        modifier = Modifier.size(30.dp),
+                                        imageVector = Icons.Rounded.ArrowForward,
+                                        contentDescription = null,
+                                        tint = pages[pagerState.currentPage].color
+                                    )
+                                }
 
+                            }
                         }
                     }
                 }
